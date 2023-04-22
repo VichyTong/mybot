@@ -13,4 +13,5 @@ async def _(bot: Bot, event: MessageEvent):
     uuid = str(event.get_user_id())
     mode = "web"
     response = exGPT_request.send_get_request(mode, msg, uuid)
-    await exGPT.finish(response)
+    msg = MessageSegment.reply(event.message_id) + MessageSegment.text(response)
+    await exGPT.finish(msg)

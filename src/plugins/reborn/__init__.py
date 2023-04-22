@@ -21,4 +21,5 @@ async def _(bot: Bot, event: MessageEvent):
         cnt[user_id] = 0
     dataset[user_id][continent] += 1
     cnt[user_id] += 1
-    await make_reborn.finish(message="似咯，remake到了" + continent + "，" + country + "\nremake了" + str(cnt[user_id]) + "次\n" + "亚洲: " + str(dataset[user_id]["亚洲"]) + "\n欧洲: " + str(dataset[user_id]["欧洲"]) + "\n北美洲: " + str(dataset[user_id]["北美洲"]) + "\n南美洲: " + str(dataset[user_id]["南美洲"]) + "\n非洲: " + str(dataset[user_id]["非洲"]) + "\n大洋洲: " + str(dataset[user_id]["大洋洲"]) + "\n")
+    msg = MessageSegment.reply(event.message_id) + MessageSegment.text("似咯，remake到了" + continent + "，" + country + "\nremake了" + str(cnt[user_id]) + "次\n" + "亚洲: " + str(dataset[user_id]["亚洲"]) + "\n欧洲: " + str(dataset[user_id]["欧洲"]) + "\n北美洲: " + str(dataset[user_id]["北美洲"]) + "\n南美洲: " + str(dataset[user_id]["南美洲"]) + "\n非洲: " + str(dataset[user_id]["非洲"]) + "\n大洋洲: " + str(dataset[user_id]["大洋洲"]) + "\n")
+    await make_reborn.finish(msg)
