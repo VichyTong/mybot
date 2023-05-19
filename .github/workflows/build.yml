@@ -31,7 +31,7 @@ jobs:
           images: |
             vichyt/qqbot
           tags: |
-            type=semver,pattern={{version}}
+            latest
             
 
       - name: Build and Publish
