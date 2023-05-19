@@ -2,8 +2,7 @@ name: Docker Hub Release
 
 on:
   push:
-    tags:
-      branches: main
+    branches: main
 
 jobs:
   docker:
