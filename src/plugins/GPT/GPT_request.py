@@ -1,7 +1,7 @@
 import openai
-import os
+import nonebot
 
-openai.api_key = os.environ['OPENAI_API_KEY']
+openai.api_key = nonebot.get_driver().config.openai_api_key
 
 
 def send_get_request(msg):
