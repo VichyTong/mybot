@@ -19,4 +19,4 @@ def send_get_request(msg):
         presence_penalty=0.0,
         stop=["END"]
     )
-    return response['choices'][0]['message']['content']
+    return response['choices'][0]['message']['content'].strip()
